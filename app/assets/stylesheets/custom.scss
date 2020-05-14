@@ -5,6 +5,9 @@ $primary-color: #8bc34a;
 $primary-color-light: #dcedc8;
 $primary-color-text: #212121;
 $divider-color: #bdbdbd;
+$action-neutral: #212121;
+$action-positive: #113499;
+$action-negative: #993412;
 
 * {
   margin: 0;
@@ -297,6 +300,24 @@ form {
     font-size: 0.8em;
     margin: 0 0 8px 0;
     color: $primary-color-dark;
+  }
+
+  .label-status {
+    font-size: 0.8em;
+    margin: 0 0 8px 0;
+    color: $action-neutral;
+  }
+
+  .label-success {
+    font-size: 0.8em;
+    margin: 0 0 8px 0;
+    color: $action-positive;
+  }
+
+  .label-danger {
+    font-size: 0.8em;
+    margin: 0 0 8px 0;
+    color: $action-negative;
   }
 }
 
