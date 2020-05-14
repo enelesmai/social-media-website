@@ -32,7 +32,7 @@ class User < ApplicationRecord
     save
   end
 
-  def confirm_friend(user)
+  def confirm_friendship(user)
     friendship = Friendship.where(friend_id: id, confirmed: nil, user_id: user.id).first
     return if friendship.nil?
 
