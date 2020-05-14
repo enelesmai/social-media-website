@@ -54,6 +54,10 @@ class User < ApplicationRecord
     friends_requests.include?(user)
   end
 
+  def get_friendship(user)
+    Friendship.where(friend_id: id, user_id:user.id, confirmed: nil).first
+  end
+
   def friends_and_own_posts
     Post.where(user: friends << self).order(created_at: desc)
   end

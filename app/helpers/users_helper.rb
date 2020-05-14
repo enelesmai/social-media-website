@@ -15,9 +15,10 @@ module UsersHelper
 
   def pending_invitation(user)
     html = ''
+    friendship = current_user.get_friendship(user)
     if current_user.pending?(user)
-      html += link_to ' | Accept', friendships_path(user: user), method: :post, class: 'profile-link'
-      html += link_to ' | Decline', friendships_path(user: user), method: :post, class: 'profile-link'
+      html += link_to ' | Accept', friendship_path(friendship, user: user, confirmed: true), method: :put, class: 'profile-link'
+      html += link_to ' | Decline', friendship_path(friendship, user: user, confirmed: false), method: :put, class: 'profile-link'
     end
     html.html_safe
   end
