@@ -46,6 +46,14 @@ class User < ApplicationRecord
     friends.include?(user)
   end
 
+  def requested?(user)
+    pending_friends.include?(user)
+  end
+
+  def pending?(user)
+    friends_requests.include?(user)
+  end
+
   def friends_and_own_posts
     Post.where(user: friends << self).order(created_at: desc)
   end

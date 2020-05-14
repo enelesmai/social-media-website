@@ -6,6 +6,15 @@
         <span class="profile-link">
           <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
         </span>
+        <span class="profile-link">
+          <%= request_friend(user) %>
+        </span>
+        <span class="profile-link">
+          <%= requested_friendship(user) %>
+        </span>
+        <span class="profile-link">
+          <%= pending_invitation(user) %>
+        </span>
       </li>
     <% end %>
   </ul>
