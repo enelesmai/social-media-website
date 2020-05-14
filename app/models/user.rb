@@ -59,6 +59,6 @@ class User < ApplicationRecord
   end
 
   def friends_and_own_posts
-    Post.where(user: friends << self).order(created_at: desc)
+    Post.where(user: friends << self).order(created_at: :desc)
   end
 end
